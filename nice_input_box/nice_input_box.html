@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fancy Input Box</title>
+<style>
+
+
+    
+#app{
+    font-family:Avenir,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-align:center;color:#2c3e50}
+
+.item{
+    width:500px;
+    position:relative;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:reverse;
+    -ms-flex-flow:column-reverse;
+    flex-flow:column-reverse;
+    -webkit-box-align:start;
+    -ms-flex-align:start;
+    align-items:flex-start;
+    margin:100px auto}
+
+.item input,.item label{
+    transition:all .3s;
+    -ms-touch-action:manipulation;
+    touch-action:manipulation}
+
+.item>input{
+    -webkit-box-ordinal-group:11;
+    -ms-flex-order:10;
+    order:10;
+    outline:none;
+    border:none;
+    width:100%;
+    padding:10px 0;
+    font-size:20px;
+    border-bottom:1px solid #d5d5d5;
+    text-indent:10px
+    }
+
+.item>input::-webkit-input-placeholder{opacity:0}
+
+.item>input:-ms-input-placeholder{opacity:0}
+
+.item>input::placeholder{opacity:0}
+
+.item>input:focus{border-bottom-color:#fff}
+
+.item>label{
+    -webkit-box-ordinal-group:101;
+    -ms-flex-order:100;
+    order:100;
+    color:#3f4f5b;
+    -webkit-transform-origin:left bottom;
+    transform-origin:left bottom;
+    -webkit-transform:translate(10px,40px) 
+    scale(1.3);transform:translate(10px,40px) 
+    scale(1.3)
+    }
+
+.item .focusline{
+    -webkit-box-ordinal-group:2;
+    -ms-flex-order:1;
+    order:1;
+    width:0;
+    height:2px;
+    background:#2384ea;
+    transition:width .5s;
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%);
+    -webkit-transform-origin:left center;
+    transform-origin:left center}
+    
+.item input:focus~div,.item input:not(:placeholder-shown)~div{width:100%}
+.item input:focus+label,.item input:not(:placeholder-shown)+label{
+    color:#52616b;-webkit-transform:translate(10px) scale(.9);transform:translate(10px) scale(.9)
+}    
+</style>
+</head>
+<body>
+
+<div id = "app">
+<div class = "item">
+    <input type="text" name="card" id="card" placeholder="indentification" v-card="" maxlength="18" ></input>
+    <label for="card">Card</label>
+    <div class="focusline"></div>
+</div>
+</div>
+    
+</body>
+</html>
